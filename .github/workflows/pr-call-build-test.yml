@@ -10,7 +10,7 @@ on:
 
 jobs:
   check-pr-source:
-    uses: .github/workflows/check-pr-source.yml@main
+    uses: .github/workflows/check-pr-source.yml@master
     with:
       base_branch: main
       disallowed_source_prefix: release/
