@@ -1,0 +1,28 @@
+# .github/reusable/check-pr-source.yml
+name: Reusable PR Source Checker
+
+on:
+  workflow_call:
+    inputs:
+      base_branch:
+        required: true
+        type: string
+      disallowed_source_prefix:
+        required: true
+        type: string
+
+jobs:
+  check-pr-source:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print PR Info
+        run: |
+          echo "Base branch: ${{ inputs.base_branch }}"
+          echo "Disallowed source prefix: ${{ inputs.disallowed_source_prefix }}"
+          echo "Current head branch: ${{ github.head_ref }}"
+
+      - name: Reject if head starts with disallowed prefix
+        if: startsWith(github.head_ref, inputs.disallowed_source_prefix) && github.base_ref == inputs.base_branch
+        run: |
+          echo "PR from '${{ github.head_ref }}' to '${{ github.base_ref }}' is not allowed!"
+          exit 1

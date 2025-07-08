@@ -1,0 +1,22 @@
+# .github/workflows/pr-call-build-test.yml
+name: PR CI (Call Reusable)
+
+on:
+  pull_request:
+    branches: [ "main" ]
+  push:
+    branches-ignore: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  check-pr-source:
+    uses: ./.github/reusable/check-pr-source.yml
+    with:
+      base_branch: main
+      disallowed_source_prefix: release/
+
+  run-ci:
+    needs: check-pr-source
+    uses: ./.github/reusable/build-test.yml
+    with:
+      python-version: "3.10"
