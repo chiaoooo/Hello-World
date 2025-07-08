@@ -20,7 +20,7 @@ jobs:
           echo "Base branch: ${{ inputs.base_branch }}"
           echo "Disallowed source prefix: ${{ inputs.disallowed_source_prefix }}"
           echo "Current head branch: ${{ github.head_ref }}"
-          echo "check PR done"
+          echo "check PR test"
 
       - name: Reject if head starts with disallowed prefix
         if: startsWith(github.head_ref, inputs.disallowed_source_prefix) && github.base_ref == inputs.base_branch
