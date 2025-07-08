@@ -10,13 +10,13 @@ on:
 
 jobs:
   check-pr-source:
-    uses: ./.github/workflows/check-pr-source.yml@master
+    uses: ./.github/workflows/check-pr-source.yml
     with:
       base_branch: main
       disallowed_source_prefix: release/
 
   run-ci:
     needs: check-pr-source
-    uses: ./.github/workflows/build-test.yml@master
+    uses: ./.github/workflows/build-test.yml
     with:
       python-version: "3.10"
