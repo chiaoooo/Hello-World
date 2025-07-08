@@ -1,11 +1,12 @@
-name: CI
+name: Reusable CI
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-  workflow_dispatch:
+  workflow_call:
+    inputs:
+      python-version:
+        required: false
+        type: string
+        default: "3.10"
 
 jobs:
   build-and-test:
@@ -18,7 +19,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: "3.10"
+        python-version: ${{ inputs.python-version }}
 
     - name: Install dependencies
       run: |
@@ -32,5 +33,4 @@ jobs:
         echo "hello" > build/output.txt
 
     - name: Run tests
-      run: |
-        pytest
+      run: pytest
