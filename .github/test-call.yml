@@ -1,0 +1,10 @@
+name: Call Reusable CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-ci:
+    uses: ./.github/workflows/reusable-ci.yml
+    with:
+      python-version: "3.10"
