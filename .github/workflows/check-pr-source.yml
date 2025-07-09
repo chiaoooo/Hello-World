@@ -1,4 +1,3 @@
-# .github/reusable/check-pr-source.yml
 name: Reusable PR Source Checker
 
 on:
