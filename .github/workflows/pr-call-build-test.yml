@@ -17,5 +17,5 @@ jobs:
   run-ci:
     needs: check-pr-source
     uses: ./.github/workflows/build-test.yml
-    with:
-      python-version: "3.10"
+    # with:
+    #   python-version: "3.10"
