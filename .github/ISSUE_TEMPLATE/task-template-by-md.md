@@ -1,5 +1,5 @@
 ---
-name: task template
+name: task template by md
 about: add new task in project
 title: ''
 labels: ''
