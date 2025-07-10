@@ -2,7 +2,7 @@ name: Task Template by yml
 description: task test template
 # title: "[Bug]: "
 # labels: ["bug", "triage"]
-projects: ["test template"]
+projects: ["chiaoooo/3"]
 # assignees:
 body:
   - type: input
