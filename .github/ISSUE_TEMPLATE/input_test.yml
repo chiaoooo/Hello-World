@@ -3,7 +3,7 @@ description: task test template
 # title: "[Bug]: "
 # labels: ["bug", "triage"]
 # projects: ["octo-org/1", "octo-org/44"]
-assignees:
+# assignees:
 body:
   - type: input
     id: purpose
