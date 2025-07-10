@@ -1,0 +1,33 @@
+name: Task Template
+description: task test template
+# title: "[Bug]: "
+# labels: ["bug", "triage"]
+# projects: ["octo-org/1", "octo-org/44"]
+assignees:
+body:
+  - type: input
+    id: purpose
+    attributes:
+      label: 目的
+      description: 寫得越具體越好，避免模糊。
+      placeholder: 實作新增 Tenant API 的 POST endpoint
+    validations:
+      required: false
+  - type: textarea
+    id: description
+    attributes:
+      label: 說明
+      description: 說明此專案的目的
+      placeholder: 撰寫 API 規格文件，包含 URL、Method、Request/Response 格式。
+      value: "A bug happened!"
+    validations:
+      required: true
+  - type: textarea
+    id: task_list
+    attributes:
+      label: 任務清單
+      description: 請填寫這張卡片要完成的子任務，格式如下（每行前加 `- [ ]`）。
+      placeholder: |
+        - [ ] 撰寫 API 文件
+        - [ ] 建立資料表
+        - [ ] 寫測試
