@@ -5,7 +5,7 @@ description: Story test template
 projects: ["chiaoooo/3"]
 # assignees:
 body:
-  - type: text
+  - type: textarea
     id: story
     attributes:
       label: User Story
