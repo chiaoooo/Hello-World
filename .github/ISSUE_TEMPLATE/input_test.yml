@@ -19,7 +19,6 @@ body:
       label: 說明
       description: 說明此專案的目的
       placeholder: 撰寫 API 規格文件，包含 URL、Method、Request/Response 格式。
-      value: "A bug happened!"
     validations:
       required: true
   - type: textarea
